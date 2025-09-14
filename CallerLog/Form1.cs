@@ -72,5 +72,20 @@ namespace CallerLog
         {
 
         }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+          
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
