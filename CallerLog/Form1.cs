@@ -17,12 +17,6 @@ namespace CallerLog
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-            textBox1.Text = "Hello";
-        }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -73,9 +67,28 @@ namespace CallerLog
 
         }
 
-        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        private void label10_Click(object sender, EventArgs e)
         {
-          
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+         
+        }
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (textBox1.Text.Length > 0)
+                {
+                    textBox2.Focus();
+                }
+                else
+                {
+                    textBox1.Focus();
+                }
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -83,9 +96,24 @@ namespace CallerLog
 
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void textBox2_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (textBox2.Text.Length > 0)
+                {
+                    textBox2.Focus();
+                }
+                else
+                {
+                    textBox1.Focus();
+                }
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }
-    }
+
 }
