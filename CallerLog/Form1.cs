@@ -17,70 +17,16 @@ namespace CallerLog
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-         
-        }
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if(e.KeyCode == Keys.Enter)
             {
-                if (textBox1.Text.Length > 0)
+               if(textBox1.Text.Length > 0)
                 {
                     textBox2.Focus();
                 }
@@ -91,29 +37,135 @@ namespace CallerLog
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_KeyDown_1(object sender, KeyEventArgs e)
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 if (textBox2.Text.Length > 0)
                 {
-                    textBox2.Focus();
+                    textBox3.Focus();
                 }
                 else
                 {
-                    textBox1.Focus();
+                    textBox2.Focus();
                 }
             }
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (textBox3.Text.Length > 0)
+                {
+                    textBox4.Focus();
+                }
+                else
+                {
+                    textBox3.Focus();
+                }
+            }
         }
 
+        private void textBox4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (textBox4.Text.Length > 0)
+                {
+                    comboBox1.Focus();
+                }
+                else
+                {
+                    textBox4.Focus();
+                }
+            }
+        }
+
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if(comboBox1.SelectedIndex != -1)
+                {
+                    dateTimePicker1.Focus();
+                }
+                else
+                {
+                    comboBox1.Focus();
+                }
+            }
+        }
+
+        private void dateTimePicker1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                textBox5.Focus();
+            }
+        }
+
+        private void textBox5_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (textBox5.Text.Length > 0)
+                {
+                    textBox6.Focus();
+                }
+                else
+                {
+                    textBox5.Focus();
+                }
+            }
+        }
+
+        private void textBox6_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (textBox6.Text.Length > 0)
+                {
+                    textBox7.Focus();
+                }
+                else
+                {
+                    textBox6.Focus();
+                }
+            }
+        }
+
+        private void textBox7_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (textBox7.Text.Length > 0)
+                {
+                    button1.Focus();
+                }
+                else
+                {
+                    textBox7.Focus();
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                errorProvider1.Clear();
+                errorProvider1.SetError(textBox1, "Name Required");
+            }
+            else if (string.IsNullOrWhiteSpace(textBox3.Text))
+            {
+                errorProvider1.Clear();
+                errorProvider1.SetError(textBox3, "Mobile NO. Required");
+            }
+            else
+            {
+                MessageBox.Show("Saved");   
+            }
+        }
+    }
 }
