@@ -164,8 +164,34 @@ namespace CallerLog
             }
             else
             {
-                MessageBox.Show("Saved");   
+                Connection cn = new Connection();
+                cn.dataSend(@"INSERT INTO CallDetails
+                         (Name, FatherName, Address, Mobile, Date, Time, Duration, Notes, Status)
+VALUES        ('"+textBox1.Text+"', '"+textBox2.Text+"','"+textBox3.Text+"','"+textBox4.Text+"','"+ dateTimePicker1.Text+"','"+textBox5.Text +"'," +
+                       "'"+textBox6.Text+"','"+textBox7.Text+"')");
+                MessageBox.Show("Saved Successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear();
             }
+        }
+
+        void Clear()
+        { 
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            dateTimePicker1.Value = DateTime.Now;
+            comboBox1.SelectedIndex = -1;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CallerLog.ViewCallDetails VCD = new ViewCallDetails();
+            VCD.StartPosition = FormStartPosition.CenterParent;
+            VCD.Show();
         }
     }
 }

@@ -50,6 +50,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -265,9 +266,21 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(420, 375);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(68, 25);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "View";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(760, 421);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -290,6 +303,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -319,6 +333,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

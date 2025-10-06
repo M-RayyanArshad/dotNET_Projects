@@ -35,5 +35,18 @@ namespace CallerLog
             }
             con.Close();
         }
+
+        public void dataGet(string SQL)
+        {
+            try
+            {
+                connection();
+                sda = new SqlDataAdapter(SQL, con);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }
